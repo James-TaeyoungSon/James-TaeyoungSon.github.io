@@ -1,26 +1,27 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Netflix Top 10 - Date range</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Netflix Rankings</title>
   </head>
   <body>
-    <h1>Netflix Top 10 for a Date Range</h1>
-    <form action="" method="post">
-      {{ form.hidden_tag() }}
-
-      <p>
-        {{ form.start_date.label }}<br>
-        {{ form.start_date }}<br>
-        {{ form.start_date.errors }}
-      </p>
-
-      <p>
-        {{ form.end_date.label }}<br>
-        {{ form.end_date }}<br>
-        {{ form.end_date.errors }}
-      </p>
-
-      <p>{{ form.submit() }}</p>
+    <h1>Netflix Rankings</h1>
+    <form method="post" action="/">
+        <div>
+            <label for="start_date">Start date:</label>
+            <input type="date" id="start_date" name="start_date">
+        </div>
+        <div>
+            <label for="end_date">End date:</label>
+            <input type="date" id="end_date" name="end_date">
+        </div>
+        <button type="submit">Get Data</button>
     </form>
+    {% if data %}
+    <h2>Results:</h2>
+    <div>{{ data|safe }}</div>
+    {% endif %}
   </body>
 </html>
