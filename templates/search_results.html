@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1 { font-size: 6; }
+        h2 { font-size: 4; }
+    </style>
+</head>
+<body>
+    <h1>FlixPatrol 넷플릭스 TV Show 일자별 글로벌 Top10 순위 검색기</h1>
+    <h2>2021년부터 현재까지 검색기간 설정 가능</h2>
+    {% if processing %}
+        <p>조회중...</p>
+    {% else %}
+        <form method="POST" action="/download">
+            {{ search_results|safe }}
+            <br>
+            <input type="submit" value="엑셀로 저장하기">
+        </form>
+    {% endif %}
+    <br>
+    <a href="/">새 검색</a>
+</body>
+</html>
