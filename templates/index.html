@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Netflix Top 10 - Date range</title>
+  </head>
+  <body>
+    <h1>Netflix Top 10 for a Date Range</h1>
+    <form action="" method="post">
+      {{ form.hidden_tag() }}
+
+      <p>
+        {{ form.start_date.label }}<br>
+        {{ form.start_date }}<br>
+        {{ form.start_date.errors }}
+      </p>
+
+      <p>
+        {{ form.end_date.label }}<br>
+        {{ form.end_date }}<br>
+        {{ form.end_date.errors }}
+      </p>
+
+      <p>{{ form.submit() }}</p>
+    </form>
+  </body>
+</html>
